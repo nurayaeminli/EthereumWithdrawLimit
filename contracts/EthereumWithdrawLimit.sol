@@ -28,11 +28,4 @@ contract lockedfund {
         payable(msg.sender).transfer(amount);
     }
 
-    
-    function withdraw() public {
-        require(msg.sender == owner, "Only owner can withdraw the fund");
-        require(address(this).balance > 0, "No funds available to withdraw");
-
-        payable(owner).transfer(address(this).balance);
-    }
 }
